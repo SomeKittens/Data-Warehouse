@@ -46,7 +46,7 @@ Each task can depend on other tasks:
 
 In this case, I have two categories of tasks: Gets and Inserts.  Each get pulls a category of data from postgres, applying a few transforms along the way and outputting the tab-separated data into a file in the `data` directory.  Once the Get is complete, the Insert task uses Luigi's built in `postgres.CopyToTable` task to insert the consumed data into our database.
 
-Finally, there's the task `AllData`, which requires every Insert task.  This is done so I only have to trigger a single task to cause everything to cascade.  If something fails along the way, Luigi will only re-run failed tasks, which is both a blessing and a curse.  The trouble starts when there's a task that technically succeeded but outputted incorrect data.  I wrote a quick cleanup script (`reset.py`) for when things go haywire.
+Finally, there's the task [`AllData`](https://github.com/SomeKittens/Data-Warehouse/blob/master/luigi/gustav_park.py#L247), which requires every Insert task.  This is done so I only have to trigger a single task to cause everything to cascade.  If something fails along the way, Luigi will only re-run failed tasks, which is both a blessing and a curse.  The trouble starts when there's a task that technically succeeded but outputted incorrect data.  I wrote a quick cleanup script ([`reset.py`](https://github.com/SomeKittens/Data-Warehouse/blob/master/luigi/gustav_park.py)) for when things go haywire.
 
 ## Our Schema
 
@@ -136,7 +136,7 @@ re:dash also provies some excellent graph support.  Some fiddling around with th
 
 ![re:dash graph for products sold by age](http://i.imgur.com/RgOHcyQ.png)
 
-Excellent!  There's many more queries that can be run against the data - you can find them in the `redash` directory.
+Excellent!  There's many more queries that can be run against the data - you can find them [here](https://github.com/SomeKittens/Data-Warehouse/blob/master/redash/examples.sql).
 
 Plugging in some of those examples, our dashboard starts to look pretty good (astute readers will notice the bug in my random number generator):
 
