@@ -27,10 +27,10 @@ reset.py will reset your database and data directory to factory settings, allowi
 
 ddw.sql is the schema for the data warehouse itself.  Load it like you would any other .sql file.  It's optional, as Luigi will create the tables if they don't exist already.
 
-#### redash
+#### redash:
 
 Contains SQL examples for running in re:dash.  You'll need to [install it](http://redash.io/deployment/setup.html) first.
 
-#### sqlDump
+#### sqlDump:
 
 The data I used when building the app.  You might find it useful.
