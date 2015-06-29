@@ -1,0 +1,17 @@
+{
+  "name": "dataGen",
+  "version": "1.0.0",
+  "description": "Generates data for Randall's data warehouse project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Randall \"SomeKittens\" Koutnik",
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^2.9.30",
+    "dotenv": "^1.2.0",
+    "faker": "^2.1.5",
+    "pg": "^4.4.0"
+  }
+}
